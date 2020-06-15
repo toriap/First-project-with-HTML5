@@ -1,0 +1,343 @@
+/*reglas
+selectores
+declaraciones
+propiedades
+valores*/
+
+
+/*selector de etiqueta header - section - section - article - nav*/
+/* header{
+  background: pink;
+  color: red;
+} */
+/*selector descendente */
+/*body header div nav ol li a es el orden desde la linea 9 en adelante*/
+
+/*selector de clase */
+/* .link * es una clase*/
+
+/* y selector de id # */
+/* #portafolio */
+
+/* colores hexadecimales usados en este programa
+gris oscuro = #1d252c
+gris claro = #626262
+backgound gris = #1b2127 */
+/* celeste = #026fff */
+
+/* estar muy pendiente del modelo de caja ya que todos css se basan
+en modelos de cajas y si un solo pixel se desborda, todo el proyecto
+se va a desbordar pero hay un truco, con box-sizing: parametro(ejemplo)
+siempre se va a ocupar solo el ancho y alto de la caja osea
+width y height  */
+
+body{
+  font-family: "source sans pro", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  /* font-style: italic; */
+}
+h1{
+  line-height: 1.5;
+  font-size: 40px;
+  letter-spacing: -.2px;
+  color: white;
+  margin: 0px;
+  /* margin: 100px 150px 70px 30px; */
+  
+  /* text-transform: uppercase; es mayuscula
+  text-decoration: underline; subrayado */
+}
+h1 strong{
+  color: #026fff;
+}
+h2 {
+color: #026fff ;
+text-transform: uppercase;
+font-family: "source sans pro";
+font-weight: bold;
+font-size: 24px;
+margin-bottom: 40px;
+}
+.portfolio{
+  background: #fafafa;
+  padding: 20px;
+}
+
+.project {
+  /*el border o borde es el cuadro que rodea algo
+   border-top: 10px solid red;
+  border-right: 10px solid green;
+  border-left: 10px solid orange;
+  border-bottom: 10px solid pink; */
+  /* border-color: red ;
+  border: 15px;
+  border-style: solid; */
+  border: 1px solid gray;
+  border-radius: 10px;
+  /* border-top-left-radius: 10px; */
+  margin-bottom: 15px;
+  /* margin: 10px ; */
+  /*el margin o margen se usa para separar cuadrod unos de otros
+   margin-top: ;
+  margin-right: ;
+  margin-bottom: ;
+  margin-left: ; */
+  padding: 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project-course, 
+.project-date,
+.project-url {
+  margin: 10px 0px;
+}
+.project-description{
+  font-size: 20px;
+}
+.project strong{
+font-family: 'Fjalla One', sans-serif;
+}
+/* .project-date{
+  margin: 10px 0;
+} */
+.project-tittle{
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+/* el margin se debe utilizar con el padding siempre 
+que se utilicen border por que si no, el border no tendra la 
+separacion que uno quiera poner */
+.project-details {
+  width: 500px;
+}
+.project-imageContainer{
+  width: 500px;
+  margin: 0px;
+
+}
+
+.hero{
+  height: 300px;
+/* background-image: url(../images/hero.jpg); */
+/* background-size: 500px, 300px; */
+/* background-repeat: no-repeat; */
+/* background-position-x: right; */
+background-color:  #1b2127 ;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.hero-image{
+object-fit: cover;
+}
+figure{
+  margin: 0px;
+}
+
+
+ol,
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.header {
+  background-color: #1b2127 ;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+}
+.menu { /* .menu hereda de .header */
+  height: inherit;
+}
+.header ol{/* .header ol hereda de .menu */
+  display: flex;
+  height: inherit;
+}
+header ol li{/* .header ol li hereda de .header ol */
+  height: inherit;
+}
+.header a {/* .header a hereda de .header ol li */
+  color: white;
+  text-decoration: none;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.footer {
+  background-color: #1b2127;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer img{
+  vertical-align: middle;
+}
+
+.footer a{
+  color: white;
+}
+.event-list-tittle{
+  padding-left: 10px;
+}
+.event-list{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.event{
+  margin: 10px;
+  width: 480px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;/*con el overflow hago que todo lo que esta fuera de
+  los bordes no se desborde si no que se ajuste a su tamano como las img*/
+background: #f4fbff;
+}
+.event img {
+  width: 480px;
+  height: 200px;
+  object-fit: cover;
+}
+.event-detail {
+margin: 20px 40px;
+margin-top: -40px ;
+background-color: white;
+position: relative; /*por ahora este atributo nos servira para super-
+ponera el archivo que tenga debajo, despues en el curso de css
+avanzada veremos mas sobre el atributo position*/
+padding: 20px;
+text-align: center;
+
+}
+.event-description {
+  text-align: left;
+}
+.event-url {
+  border: 1px solid #056fff;/* pudimos quitar el color #056fff del border porque por defecto
+  el border coge el color del texto abajo puesto como #056fff*/
+  padding: 5px 20px;
+  text-decoration: none;
+  color: #056fff;
+  border-radius: 5px;
+}
+.contact{
+  background-color: #056fff;
+  color: white;
+  height: 150px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.social-link{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  margin: 0 10px;
+}
+.social-link.twitter{
+  background-image: url('../images/twitter.svg');
+}
+.social-link.facebook{
+background-image: url("../images/facebook.svg");
+}
+.social-link.github{
+background-image: url("../images/github.svg");
+}
+.social-link.instagram{
+background-image: url("../images/instagram.svg");
+}
+.form-email input{
+  border-color: gray;
+  border-radius: 5px;
+  padding: 5px 20px 5px 25px;
+  background-image: url("../images/envelope.svg");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 5px;
+  border-style: s;
+}
+.form-email button{
+  border-radius: 5px;
+  display: block;
+  background: transparent;
+  color: white;
+  padding: 10px 20px 10px 25px;
+  width: 100px;
+  margin-top: 10px;
+/* margin: 10px auto 0; */
+}
+.form-email{
+  font-family: "source sans pro";
+}
+.container {
+  /* border: 1px solid red; */
+  width: 1000px;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}
+
+  /* border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+} */
+/* .logo{
+  margin: 0px;
+} */
+/* Tipos de display
+
+Los valores más comunes que puede recibir la propiedad display son:
+
+
+block: el elemento intenta abarcar todo el ancho posible.
+
+inline: reduce su tamaño exclusivamente hasta lo que abarca su contenido, descartando las propiedades width y height.
+
+inline-block: combina lo mejor de block e inline, ya que respeta las dimensiones indicadas en las propiedades width y height, pero coloca el elemento en línea (al costado) de elementos hermanos que también tengan display: inline o inline-block.
+
+flex: asume algunas propiedades por defecto que favorecen la alineación de los elementos internos.
+
+grid: similar a flex, asume algunas propiedades por defecto organizando los contenidos en filas y columnas.
+
+none: oculta el elemento. */
+/* TODA LA SIGUIENT SECCION EQUIVALE A LA EXPLICACION DE FLEXBOX
+ .flexbox {
+display:flex ;
+/* flex-wrap: nowrap; esto es para que nunca pasen a la linea de abajo */
+/* flex-wrap: wrap; */
+
+/* flex-direction: column; esto hace que se organice en forma de columna vertical*/
+
+/* }
+.box{
+  width: 52px;
+  height: 52px;
+  border: 1px solid red;
+  flex-shrink: 0;
+  margin: 5px;
+} */ 
